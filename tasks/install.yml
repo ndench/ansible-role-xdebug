@@ -1,11 +1,16 @@
 ---
 - name: install php xdebug
   apt:
-    pkg: php7.1-xdebug
+    pkg: php{{ xdebug_version }}-xdebug
     state: present
 
 - name: configure xdebug
-  copy:
-    src: xdebug.ini
-    dest: /etc/php/7.1/mods-available/xdebug.ini
+  template:
+    src: xdebug.ini.j2
+    dest: /etc/php/{{ xdebug_version }}/mods-available/xdebug.ini
 
+- name: enable xdebug module
+  command: phpenmod xdbeug
+  when: xdebug_enable_mod == true
+  notify:
+      - restart php-fpm

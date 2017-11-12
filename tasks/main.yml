@@ -1,2 +1,2 @@
 ---
-- { include: install.yml, become: yes }
+- { include: install.yml, become: yes, tags: ['xdebug', 'xdebug:install'] }

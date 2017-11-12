@@ -1,0 +1,19 @@
+zend_extension=xdebug.so
+xdebug.max_nesting_level={{ xdebug_conf_max_nesting_level }}
+xdebug.remote_port={{ xdebug_conf_remote_port }}
+xdebug.idekey={{ xdebug_conf_idekey }}
+
+;xdebug.remote_enable=1
+
+; Connect to the client that made the request (overrides remote_host)
+xdebug.remote_connect_back={{ xdebug_conf_remote_connect_back }}
+
+; Start Xdebug on every request, regardless of the GET/POST variable
+;xdebug.remote_autostart=1
+
+; IP address of the host machine (if remote_connect_back doesn't work)
+;xdebug.remote_host=10.0.2.2
+
+; Xdebug Profiling
+;xdebug.profiler_enable=1
+;xdebug.profiler_output_dir=/tmp

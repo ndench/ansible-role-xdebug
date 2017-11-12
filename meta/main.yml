@@ -1,0 +1,21 @@
+galaxy_info:
+  author: ndench
+  description: PHP extension for development and debugging
+  company: DingoPM
+  license: license MIT
+
+  min_ansible_version: 2.4
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+
+  galaxy_tags:
+      - development
+      - web
+      - php
+      - debug
+      - xdebug
+
+dependencies: []
