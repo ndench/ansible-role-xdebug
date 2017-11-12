@@ -1,0 +1,11 @@
+---
+- name: install php xdebug
+  apt:
+    pkg: php7.1-xdebug
+    state: present
+
+- name: configure xdebug
+  copy:
+    src: xdebug.ini
+    dest: /etc/php/7.1/mods-available/xdebug.ini
+
