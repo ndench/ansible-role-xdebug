@@ -21,13 +21,15 @@ install:
   # Install Ansible.
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
+  - ansible-galaxy install --roles-path . geerlingguy.php-versions
+  - ansible-galaxy install --roles-path . geerlingguy.php
 
 script:
   # Check the role/playbook's syntax.
-  - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+  - ANSIBLE_ROLES_PATH=. ansible-playbook -i tests/inventory tests/test.yml --syntax-check
 
   # Run the role/playbook with ansible-playbook.
-  - ansible-playbook -i tests/inventory tests/test.yml -vvv
+  - ANSIBLE_ROLES_PATH=. ansible-playbook -i tests/inventory tests/test.yml -vvv
 
   # check xdebug is enabled
   - php -a | grep xdebug

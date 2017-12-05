@@ -18,4 +18,6 @@ galaxy_info:
       - debug
       - xdebug
 
-dependencies: []
+dependencies:
+    - geerlingguy.php-versions
+    - geerlingguy.php
