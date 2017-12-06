@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
   connection: local
+  vars:
+    php_enable_webserver: false
   roles:
     - ../../ansible-role-xdebug
