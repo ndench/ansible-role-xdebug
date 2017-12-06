@@ -34,7 +34,8 @@ xdebug_conf_remote_connect_back: 0
 Dependencies
 ------------
 
-* PHP (check out [geerlingguy.php](https://github.com/geerlingguy/ansible-role-php))
+* [geerlingguy.php](https://github.com/geerlingguy/ansible-role-php)
+* [geerlingguy.php-version](https://github.com/geerlingguy/ansible-role-php-versions)
 
 Example Playbook
 ----------------
