@@ -1,4 +1,5 @@
 php_version: 7.1
+php_enable_webserver: false
 
 xdebug_version: 7.1
 xdebug_enable_mod: false
