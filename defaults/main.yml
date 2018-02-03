@@ -1,4 +1,3 @@
-xdebug_version: 7.1
 xdebug_enable_mod: false
 xdebug_conf_max_nesting_level: 256
 xdebug_conf_remote_port: 9000

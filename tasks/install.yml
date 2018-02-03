@@ -1,13 +1,13 @@
 ---
 - name: install php xdebug
   apt:
-    pkg: php{{ xdebug_version }}-xdebug
+    pkg: php-xdebug
     state: present
 
 - name: configure xdebug
   template:
     src: xdebug.ini.j2
-    dest: /etc/php/{{ xdebug_version }}/mods-available/xdebug.ini
+    dest: /etc/php/{{ php_version }}/mods-available/xdebug.ini
 
 - name: enable xdebug module
   command: phpenmod xdbeug
