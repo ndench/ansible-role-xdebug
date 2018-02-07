@@ -18,24 +18,32 @@ All variables are listed below, along with their default values in [defaults/mai
 Variables for installing xdebug:
 
 ```yaml
-xdebug_version: 7.1      # The version of PHP that's running
-xdebug_enable_mod: false # Whether to run phpenmod to enable the xdebug model
-```
+# The version of the xdebug package to install (ie. php7.2-xdebug)
+xdebug_php_version: 7.2
 
-Settings for the `xdebug.ini` file, see [xdebug docs](https://xdebug.org/docs/all_settings):
+# xdbebug.ini settings
+# see: https://xdebug.org/docs/all_settings
 
-```yaml
 xdebug_conf_max_nesting_level: 256
-xdebug_conf_remote_port: 9000
 xdebug_conf_idekey: PHPSTORM
+
+# Start xdebug on every requset, regardless of the GET/POST variable
+xdebug_remote_autostart: 0
+
+# Connect to the client that sent the request
 xdebug_conf_remote_connect_back: 0
+
+# Connect to the specified host (overidden by remote_connect_back)
+# 10.0.2.2 is the default IP address virtualbox assigns to the host
+xdebug_remote_enable: 0
+xdebug_remote_host: 10.0.2.2
+xdebug_conf_remote_port: 9000
 ```
 
 Dependencies
 ------------
 
-* [geerlingguy.php](https://github.com/geerlingguy/ansible-role-php)
-* [geerlingguy.php-version](https://github.com/geerlingguy/ansible-role-php-versions)
+None.
 
 Example Playbook
 ----------------

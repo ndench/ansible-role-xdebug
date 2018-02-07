@@ -18,6 +18,4 @@ galaxy_info:
       - debug
       - xdebug
 
-dependencies:
-    - { role: geerlingguy.php-versions, become: yes }
-    - { role: geerlingguy.php, become: yes }
+dependencies: []
