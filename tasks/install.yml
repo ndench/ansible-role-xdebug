@@ -6,5 +6,12 @@
 
 - name: configure xdebug
   template:
-    src: xdebug.ini.j2
+    src: xdebug2.ini.j2
     dest: /etc/php/{{ php_version }}/mods-available/xdebug.ini
+  when: xdebug_version == 2
+
+- name: configure xdebug
+  template:
+    src: xdebug3.ini.j2
+    dest: /etc/php/{{ php_version }}/mods-available/xdebug.ini
+  when: xdebug_version == 3

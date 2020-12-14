@@ -1,13 +1,16 @@
 # The version of the xdebug package to install (ie. php7.2-xdebug)
 xdebug_php_version: 7.2
 
+# Whether to configure xdebug 2 or 3
+xdebug_version: 2
+
 # xdbebug.ini settings
 # see: https://xdebug.org/docs/all_settings
 
 xdebug_conf_max_nesting_level: 256
 xdebug_conf_idekey: PHPSTORM
 
-# Start xdebug on every requset, regardless of the GET/POST variable
+# Start xdebug on every request, regardless of the GET/POST variable
 xdebug_remote_autostart: 0
 
 # Connect to the client that sent the request

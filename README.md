@@ -15,11 +15,13 @@ Role Variables
 
 All variables are listed below, along with their default values in [defaults/main.yml](defaults/main.yml):
 
-Variables for installing xdebug:
+Variables for installing and configuring xdebug 2:
 
 ```yaml
 # The version of the xdebug package to install (ie. php7.2-xdebug)
 xdebug_php_version: 7.2
+
+xdebug_version: 2
 
 # xdbebug.ini settings
 # see: https://xdebug.org/docs/all_settings
@@ -38,6 +40,35 @@ xdebug_conf_remote_connect_back: 0
 xdebug_remote_enable: 0
 xdebug_remote_host: 10.0.2.2
 xdebug_conf_remote_port: 9000
+```
+
+Variables for installing and configuring xdebug 3:
+
+```yaml
+# The version of the xdebug package to install (ie. php7.2-xdebug)
+xdebug_php_version: 7.2
+
+xdebug_version: 3
+
+# xdbebug.ini settings
+# see: https://xdebug.org/docs/all_settings
+
+xdebug_conf_max_nesting_level: 256
+xdebug_conf_idekey: PHPSTORM
+
+# The mode to run xdebug in: https://xdebug.org/docs/all_settings#mode
+xdebug_conf_mode: debug
+
+# How xdebug should be started https://xdebug.org/docs/all_settings#start_with_request
+xdebug_conf_start_with_request: trigger
+
+# Connect to the client that sent the request
+xdebug_conf_discover_client_host: 0
+
+# Connect to the specified host (overidden by discover_client_host)
+# 10.0.2.2 is the default IP address virtualbox assigns to the host
+xdebug_conf_client_host: 10.0.2.2
+xdebug_conf_client_port: 9000
 ```
 
 Dependencies
